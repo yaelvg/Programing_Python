@@ -1,62 +1,87 @@
 '''Este archivo contiene funciones que se utilizaran en el programa principal'''
+import random as r
 import numpy as np
+
 from numpy import mean
-import random
-def aleatorio(n: int, lm: int):
+
+def ingreso_muestras(nmuestras: int):
+    """"Funcion para almacenas las muestras ingresadas
+
+    Args:
+        nmuestras (int): Numero total de las muestras
+
+    Returns:
+        lista: Lista con los datos ingresados por el usuario
+    """
+    muestras=list()
+    
+    print('Digite las muestras')
+    for i in range(nmuestras):
+        inp=int(input('*->'))
+        muestras.append(inp)
+        
+    return muestras
+
+def aleatorio(nmuestras: int, l_superior: int):
+    
     """Aleatorio
         Genera numeros aleatorios para despues
         almacenarlos en una lista
     Args:
-        n (int): Cantidad de numeros generados
-        lm (int): Limite superior de numeros aleatorios
+        nmuestras (int): Numero de datos almacenados en la lista
+        l_superior (int): limite superior
+
+    Returns:
+        lista: Retorna una lista
     """
     lista=list()
-    while n!=0:
-        numero=random.randint(1,lm)
+    
+    while nmuestras!=0:
+        numero=r.randint(1,l_superior)
         lista.append(numero)
-        n-=1
+        nmuestras-=1
+        
     return lista
-def media_aritmetica(nm: int):
+
+def media_aritmetica(nmuestras: int):
     """Retorna la media artimetica de los datos proporcionados
 
 
     Args:
-        nm (int): Numero de muestras 
+        nmuestras (int): Numero de muestras 
     """
     '''Lista vacia para agrupar muestras'''
-    muestras=list()
-    print('Digite las muestras')
-    for i in range(nm):
-        inp=int(input('*->'))
-        muestras.append(inp)
-    return mean(muestras)
-def desviacion(nm: int):
+    x = ingreso_muestras(nmuestras)
+    return mean(x)
+
+def desviacion(nmuestras: int):
     """Desviacion Estandar
         Realiza la desviacion estandar de determinados datos
     Args:
-        nm (int): Numero de muestras
+        nmuestras (int): Numero de muestras
     """
-    muestras=list()
-    print('Digite las muestras')
-    for i in range(nm):
-        inp=int(input('*->'))
-        muestras.append(inp)
-    return np.std(muestras)
-def burbuja(nm: int):
+    x=ingreso_muestras(nmuestras)
+    return np.std(x)
+
+def burbuja(nmuestras: int):
     """Ordenamiento burbuja
         Realiza un ordenamiento burbuja
     Args:
         nm (int): Numero de muestras
     """
-    lm=int(input('Especifica el número más alto para los números aleatorios:'))
-    lst=aleatorio(nm,lm)
-    print('Los datos generados son los siguientes', lst)
+    
+    l_superior=int(input('Especifica el número más alto para los números aleatorios:'))
+    numeros=aleatorio(nmuestras,l_superior)
+    
+    print('Los datos generados son los siguientes', numeros)
+    
     '''Ordenamiento'''
-    for i in range(nm-1):
-        for j in range(nm-1-i):
+    for i in range(nmuestras-1):
+        for j in range(nmuestras-1-i):
             '''El rango se va haciendo mas pequeño conforme el numero de
-                datos organizados aumente.
+                datos organizados aumente para .
             '''
-            if lst[j] < lst[j+1]:
-                lst[j],lst[j+1]=lst[j+1],lst[j]
-    return lst
+            if numeros[j] < numeros[j+1]:
+                numeros[j],numeros[j+1]=numeros[j+1],numeros[j]
+                
+    return numeros

@@ -6,8 +6,10 @@ def menu():
     
     for i in range(17):
         print('*', end='_')
+        
     print('\n\tMi programa.')
-    print(' 1. Media Aritmética\n 2. Desviación Estándar\n 3. Burbuja\n 4.Salir');
+    print(' 1. Media Aritmética\n 2. Desviación Estándar\n 3. Burbuja\n 4.Salir')
+    
     for i in range(17):
         print('*', end='_')
         
@@ -27,28 +29,33 @@ def Principal():
         type: Funcion '''
         os.system('cls')
         print('OPCION INVALIDA')
+        
         return Principal()
        
     if opcion == 1:
-        print('\n\t**MEDIA ARITMETICA**')
-        nm=int(input('Digite el numero de muestras->'))
-        r1=funciones.media_aritmetica(nm)
-        print(f'La media aritmetica es de {r1}')
+        print('\n\n\t**MEDIA ARITMETICA**')
+        
+        n_muestras=int(input('Digite el numero de muestras->'))
+        respuesta=funciones.media_aritmetica(n_muestras)
+        print(f'La media aritmetica es de {respuesta}\n')
         
     elif opcion == 2:
-        print('\n\t**DESVIACION ESTANDAR**')
-        nm=int(input('Digite el numero de muestras->'))
-        r2=funciones.desviacion(nm)
-        print(f'La desviacion estandar es de {r2}')
+        print('\n\n\t**DESVIACION ESTANDAR**')
+        
+        n_muestras=int(input('Digite el numero de muestras->'))
+        respuesta=funciones.desviacion(n_muestras)
+        print(f'La desviacion estandar es de {respuesta} \n')
         
     elif opcion == 3:
-        print('\n\t**BURBUJA**')
-        nm=int(input('Digite el numero de muestras->'))
-        r3=funciones.burbuja(nm)
-        print(f'\nOrdenamiento de las muestras\n',r3)
+        print('\n\n\t**BURBUJA**')
+        4
+        n_muestras=int(input('Digite el numero de muestras->'))
+        respuesta=funciones.burbuja(n_muestras)
+        print(f'\nOrdenamiento de las muestras\n',respuesta,'\n')
         
     elif opcion == 4:
-        print('\n\t**SALIR**')
+        print('\n\n\t**SALIR**')
+        
         print('Gracias por usar mi pequeño programa creado por python :)\n')
         quit()
         
