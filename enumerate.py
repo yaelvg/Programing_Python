@@ -2,7 +2,7 @@
 lista=['Azul','Ada','Norma','Marco','Ale']
 '''Lista de nombre'''
 for indice, nombre in enumerate(lista):
-    print(indice, nombre)
+    print(f'posicion{indice}= {nombre}')
 '''Esto provoca que no haya varibales vasura por lo que es mas eficiente como se menciono
 Lo que regresa la función enumerate es una tupla lo que me permite lo anterior
 
