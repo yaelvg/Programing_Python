@@ -1,3 +1,10 @@
+'''
+Nombre: Yael ALejandro Valdez Gonzalez
+Boleta: 2022640608
+Practica: 1
+Fecha: 16/09/2023
+'''
+
 '''Este archivo contiene funciones que se utilizaran en el programa principal'''
 import random as r
 import numpy as np
@@ -13,11 +20,11 @@ def ingreso_muestras(nmuestras: int):
     Returns:
         lista: Lista con los datos ingresados por el usuario
     """
-    muestras=list()
+    muestras = list()
     
     print('Digite las muestras')
     for i in range(nmuestras):
-        inp=int(input('*->'))
+        inp = int(input('*->'))
         muestras.append(inp)
         
     return muestras
@@ -34,12 +41,8 @@ def aleatorio(nmuestras: int, l_superior: int):
     Returns:
         lista: Retorna una lista
     """
-    lista=list()
-    
-    while nmuestras!=0:
-        numero=r.randint(1,l_superior)
-        lista.append(numero)
-        nmuestras-=1
+    #Genera una lista con numeros aleatorios
+    lista = [r.randint(0,l_superior) for _ in range(nmuestras)] 
         
     return lista
 
@@ -60,7 +63,7 @@ def desviacion(nmuestras: int):
     Args:
         nmuestras (int): Numero de muestras
     """
-    x=ingreso_muestras(nmuestras)
+    x = ingreso_muestras(nmuestras)
     return np.std(x)
 
 def burbuja(nmuestras: int):
@@ -70,18 +73,19 @@ def burbuja(nmuestras: int):
         nm (int): Numero de muestras
     """
     
-    l_superior=int(input('Especifica el número más alto para los números aleatorios:'))
-    numeros=aleatorio(nmuestras,l_superior)
+    l_superior = int(input('Especifica el número más alto para los números aleatorios:'))
+    numeros = aleatorio(nmuestras,l_superior)
     
     print('Los datos generados son los siguientes', numeros)
     
     '''Ordenamiento'''
+    '''El rango se va haciendo mas pequeño conforme el numero de
+    datos organizados aumente para .
+    '''
     for i in range(nmuestras-1):
         for j in range(nmuestras-1-i):
-            '''El rango se va haciendo mas pequeño conforme el numero de
-                datos organizados aumente para .
-            '''
+            '''Realiza un intercambio dependiendo de la posicion de datos'''
             if numeros[j] < numeros[j+1]:
-                numeros[j],numeros[j+1]=numeros[j+1],numeros[j]
+                numeros[j] , numeros[j+1] = numeros[j+1] , numeros[j]
                 
     return numeros
