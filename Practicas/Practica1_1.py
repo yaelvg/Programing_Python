@@ -7,9 +7,11 @@ Fecha: 16/09/2023
 
 import os
 
-import Practica_1 as funciones
+import Practica1_2 as funciones
 
 def menu():
+    """Muestra el menu en la funcion principal
+    """
     
     for i in range(17): print('*', end='_')
     print('\n\tMi programa.')

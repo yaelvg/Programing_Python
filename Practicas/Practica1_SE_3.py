@@ -28,8 +28,7 @@ def error(filas : list):
             return ingreso_datos()
         n -= 1
         posicion += 1
-        
-        
+       
 def ingreso_datos():
     """Ingreso de datos
 
@@ -95,7 +94,8 @@ def ejemplo():
     ecuacuaciones = np.array([[2,-4,-3],[1,5,-5],[4,2,67]]) 
     resultados = np.array([[15],[5],[20]])
     
-    print('Se guardan las ecuaciones en una matriz\n', ecuacuaciones,'\n\n Y en un vector los resultados\n', resultados)
+    print('Se guardan las ecuaciones en una matriz\n', ecuacuaciones,
+          '\n\n Y en un vector los resultados\n', resultados)
     print('\nDel modelo: X=A^(-1)B')
     
     inversa = np.linalg.inv(ecuacuaciones)
@@ -108,11 +108,11 @@ def ejemplo():
     for indice, valor in enumerate(x):
         print(f'x[{indice}] = {valor}')
     
-    print('\nPara confirmar hacemos el producto entre el vector de resultados y la matriz de ecuaciones')
+    print('\nPara confirmar hacemos el producto entre el vector de resultadosy la matriz de ecuaciones')
     resultados = ecuacuaciones@x
     print('Como resultado obtenemos el vector de los resultados del sistema\n', resultados)
     
-def Principal():
+def principal():
     
     """Funcion principal que contien las funciones secundarias.
     """
@@ -134,6 +134,8 @@ def Principal():
     print('\n\nSoluciones:\n')
     for indice, valor in enumerate(x):
         print(f'x[{indice+1}] = {valor}')
-    
+    print('\nComprobacion')
+    y = ecuaciones@x
+    print(y)    
 '''MAIN'''
-Principal()
+principal()

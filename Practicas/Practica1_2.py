@@ -29,23 +29,6 @@ def ingreso_muestras(nmuestras: int):
         
     return muestras
 
-def aleatorio(nmuestras: int, l_superior: int):
-    
-    """Aleatorio
-        Genera numeros aleatorios para despues
-        almacenarlos en una lista
-    Args:
-        nmuestras (int): Numero de datos almacenados en la lista
-        l_superior (int): limite superior
-
-    Returns:
-        lista: Retorna una lista
-    """
-    #Genera una lista con numeros aleatorios
-    lista = [r.randint(0,l_superior) for _ in range(nmuestras)] 
-        
-    return lista
-
 def media_aritmetica(nmuestras: int):
     """Retorna la media artimetica de los datos proporcionados
 
@@ -74,8 +57,8 @@ def burbuja(nmuestras: int):
     """
     
     l_superior = int(input('Especifica el número más alto para los números aleatorios:'))
-    numeros = aleatorio(nmuestras,l_superior)
-    
+    #Genera una lista con numeros aleatorios
+    numeros = [r.randint(0,l_superior) for _ in range(nmuestras)] 
     print('Los datos generados son los siguientes', numeros)
     
     '''Ordenamiento'''
