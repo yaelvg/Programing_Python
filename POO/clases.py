@@ -1,6 +1,5 @@
 class Alumno():
-    """Contiene atributos de un alumno
-    """    
+    """Contiene atributos de un alumno"""    
     boleta=''
     nombre=''
     def hablar(self):
