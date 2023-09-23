@@ -10,18 +10,23 @@ class Alumnos():
         
     def __str__(self) -> str:
         return f'Hola mi nombre es {self.__nombre}\n Cuenta: {self.__cuenta}'
+    
     @property
     #getter
-    def get_nombre(self):
+    def nombre(self):
         return self.__nombre
     
-    @property.setter
-    def set_nombre(self):
-        return 
+    @nombre.setter
+    def nombre(self, cambio : str):
+        self.__nombre = cambio
         
-alumno1=Alumnos('', '')
+alumno1=Alumnos('xxx', '')
 
 #No sirve hacer lo siguiente ya que las variables son privadas
 alumno1.__nombre='aleee'
 alumno1.__cuenta='1232'
 print(alumno1)
+print('\n\n')
+alumno1.nombre='Aleee'
+print(alumno1)
+print(f'El nombre del alumno es {alumno1.nombre}')

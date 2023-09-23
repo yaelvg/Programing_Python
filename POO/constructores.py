@@ -8,6 +8,7 @@ class Alumno():
         self.nombre= nombre
         self.boleta= boleta
         self.edad= edad
+        
     def __str__(self) -> str:
         return f'Hola soy {self.nombre} \nMi boleta {self.boleta}\n y mi edad es {self.edad}'
     
@@ -16,7 +17,7 @@ class Alumno():
         """
         print(f'Hola soy {self.nombre} \nMi boleta {self.boleta}\n y mi edad es {self.edad}')
         
-alumno1=Alumno(nombre='Ale',boleta='1231')
+alumno1=Alumno('Ale','1231')
 alumno1.hablar()
 '''Para el uso de la sobrecargar de contructores en python no se puede, se utilizan las varaiables 
 opcionales'''

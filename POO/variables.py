@@ -9,6 +9,7 @@ class Alumno():
         self.nombre= nombre
         self.boleta= boleta
         self.edad= edad
+        
     def __str__(self) -> str:
         return f'Hola soy {self.nombre} \nMi boleta {self.boleta}\n y mi edad es {self.edad}'
     
