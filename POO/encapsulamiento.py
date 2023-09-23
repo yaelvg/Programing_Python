@@ -30,3 +30,4 @@ print('\n\n')
 alumno1.nombre='Aleee'
 print(alumno1)
 print(f'El nombre del alumno es {alumno1.nombre}')
+
