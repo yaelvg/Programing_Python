@@ -113,7 +113,7 @@ class Perro(Domestica):
 
 class Vivora(Exotica):
     
-    def __init__(self, nombre : str, edad: int, duenio: str)
+    def __init__(self, nombre : str, edad: int, duenio: str):
         super().__init__(nombre, edad, duenio)
 
     def habla()-> str:
