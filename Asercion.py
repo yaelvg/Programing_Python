@@ -1,16 +1,16 @@
-def modular_pow(base, exponent, modulus):
-    if modulus == 1:
+def potencia(base, expo, modulo):
+    if modulo == 1:
         return 0
-    assert (modulus - 1) * (modulus - 1)
-    result = 1
-    base = base % modulus
-    while exponent > 0 :
-        if exponent % 2 == 1:
-            result = (result * base) % modulus
-        exponent = exponent >> 1
-        base = (base * base) % modulus
-    return result
+    #assert (modulo - 1) * (modulo - 1)
+    r = 1
+    base %= modulo
+    while expo > 0 :
+        if expo % 2 == 1:
+            r = (r * base) % modulo
+        expo = expo >> 1
+        base = (base * base) % modulo
+    return r
 x=int(input('base:'))
-y=int(input('Exponente:'))
+y=int(input('expoe:'))
 z=int(input('Modulo:'))
-print(modular_pow(x,y,z))
+print(potencia(x,y,z))
