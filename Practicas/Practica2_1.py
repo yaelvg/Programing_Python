@@ -44,7 +44,7 @@ class Persona:
         self.__numero = numero
         
     def __str__(self) -> str:
-        return f'¡Hola! , Mi nombre es {self.__nombre}, tengo {self.__edad} años , nací en {2023-self.__edad}.\n mido {self.__estatura} metros y mi número de contacto es {self.__numero} ¡Saludos!'
+        return f'¡Hola! , Mi nombre es {self.__nombre}, tengo {self.__edad} años, nací en {2023-self.__edad}.\n mido {self.__estatura} metros y mi número de contacto es {self.__numero} ¡Saludos!'
 
 def llenado():
     """Guarda informacion proporcionada por el usuario

@@ -115,6 +115,7 @@ class Alumno():
     @correo.setter
     def correo(self,correo):
         self.__correo = correo    
+        
 class Lista():
     """Esta clase tiene variables 'atributos' de tipo Profesor y Alumno
     """
@@ -212,3 +213,4 @@ registros()
 #Realiza una limpieza de pantalla para solo ver los alumnos en el 'sistema'
 os.system('cls')
 lista_alumnos.impresion()
+
