@@ -204,4 +204,11 @@ class Tablet (Computadora):
         print(f'Almacenamiento (interno): {self.__almacenamiento} GB')
         print(f'GPU: {self.__gpu}')
         print(f'Accesorios: {self.__acesorios}')
-        print(f'Garantia: {self.__garantia}')    
+        print(f'Garantia: {self.__garantia}')   
+        
+'''Principal'''
+#Instancias de tipo computadora portatil
+lap_a=ComputadoraPortatil()
+lap_b=
+lap_c=
+ 
