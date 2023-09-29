@@ -209,6 +209,4 @@ class Tablet (Computadora):
 '''Principal'''
 #Instancias de tipo computadora portatil
 lap_a=ComputadoraPortatil()
-lap_b=
-lap_c=
- 
+
