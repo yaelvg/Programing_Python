@@ -5,8 +5,9 @@ Boleta: 2022640608
 Practica 3
 Fecha: 4/10/2023
 '''
+from abc import ABCMeta
 #Clase madre
-class Computadora:
+class Computadora(metaclass=ABCMeta):
     
     def __init__(self,memoria: str, procesador: str, almacenamiento: str, gpu: str) -> None:
         """_summary_
@@ -54,7 +55,7 @@ class Computadora:
 class ComputadoraPortatil (Computadora):
     
     def __init__(self,memoria: str, procesador: str, almacenamiento: str, gpu: str, pulgadas : int, n_puertos: str):
-        super().__init__(memoria, procesador, almacenamiento, gpu)
+        super().__init__(self, memoria, procesador, almacenamiento, gpu)
         self.__pulgadas = pulgadas
         self.__n_puertos = n_puertos
     
@@ -77,10 +78,10 @@ class ComputadoraPortatil (Computadora):
     def caracteristicas(self):
         print('\n\t\t********Factura********\n')
         print('\tComputadora Portatil:')
-        print(f'Memoria RAM: {self.__memoria} GB')
-        print(f'Procesador: {self.__procesador}')
-        print(f'Almacenamiento (interno): {self.__almacenamiento} GB')
-        print(f'GPU: {self.__gpu}')
+        print(f'Memoria RAM: {self.memoria} GB')
+        print(f'Procesador: {self.procesador}')
+        print(f'Almacenamiento (interno): {self.almacenamiento} GB')
+        print(f'GPU: {self.gpu}')
         print(f'Tamaño de pantalla: {self.__pulgadas} pulgadas')
         print(f'Número de puertos: {self.__n_puertos}')
 
@@ -90,8 +91,8 @@ class ComputadoraEscritorio (Computadora):
     Args:
         Computadora (class): Clase madre
     """
-    def __init__(self,memoria: str, procesador: str, almacenamiento: str, gpu: str, peso: float, largo: float, ancho : float) -> None:
-        super().__init__(memoria, procesador, almacenamiento, gpu)
+    def __init__(self, memoria: str, procesador: str, almacenamiento: str, gpu: str, peso: float, largo: float, ancho : float) -> None:
+        Computadora.__init__(self,memoria, procesador, almacenamiento, gpu)
         self.__peso = peso
         self.__largo = largo
         self.__ancho = ancho    
@@ -121,10 +122,10 @@ class ComputadoraEscritorio (Computadora):
     def caracteristicas(self):
         print('\n\t\t********Factura********\n')
         print('\tComputadora de Escritorio:')
-        print(f'Memoria RAM: {self.__memoria} GB')
-        print(f'Procesador: {self.__procesador}')
-        print(f'Almacenamiento (interno): {self.__almacenamiento} GB')
-        print(f'GPU: {self.__gpu}')
+        print(f'Memoria RAM: {self.memoria} GB')
+        print(f'Procesador: {self.procesador}')
+        print(f'Almacenamiento (interno): {self.almacenamiento} GB')
+        print(f'GPU: {self.gpu}')
         print(f'Peso: {self.__peso} kg')
         print(f'largo: {self.__largo}')    
         print(f'ancho: {self.__ancho}')    
@@ -138,7 +139,7 @@ class TelefonoInteligente (Computadora):
         Computadora (class): Clase madre
     """
     def __init__(self,memoria: str, procesador: str, almacenamiento: str, gpu: str, sistema_op: str , color: str, marca: str) -> None:
-        super().__init__(memoria, procesador, almacenamiento, gpu)
+        Computadora.__init__(self,memoria, procesador, almacenamiento, gpu)
         self.__sistema_op = sistema_op
         self.__color = color
         self.__marca = marca
@@ -162,10 +163,10 @@ class TelefonoInteligente (Computadora):
     def caracteristicas(self):
         print('\n\t\t********Factura********\n')
         print('\tTelefono Inteligente:')
-        print(f'Memoria RAM: {self.__memoria} GB')
-        print(f'Procesador: {self.__procesador}')
-        print(f'Almacenamiento (interno): {self.__almacenamiento} GB')
-        print(f'GPU: {self.__gpu}')
+        print(f'Memoria RAM: {self.memoria} GB')
+        print(f'Procesador: {self.procesador}')
+        print(f'Almacenamiento (interno): {self.almacenamiento} GB')
+        print(f'GPU: {self.gpu}')
         print(f'Sistema Operativo: {self.__sistema_op}')
         print(f'Color: {self.__color}')    
 
@@ -177,7 +178,7 @@ class Tablet (Computadora):
         Computadora (class): Clase madre
     """
     def __init__(self,memoria: str, procesador: str, almacenamiento: str, gpu: str, accesorios: list, garantia: str ):
-        super().__init__(memoria, procesador, almacenamiento, gpu)
+        Computadora.__init__(self, memoria, procesador, almacenamiento, gpu)
         self.__acesorios = accesorios
         self.__garantia = garantia
     
@@ -199,14 +200,35 @@ class Tablet (Computadora):
     def caracteristicas(self):
         print('\n\t\t********Factura********\n')
         print('\tComputadora de Escritorio:')
-        print(f'Memoria RAM: {self.__memoria} GB')
-        print(f'Procesador: {self.__procesador}')
-        print(f'Almacenamiento (interno): {self.__almacenamiento} GB')
-        print(f'GPU: {self.__gpu}')
+        print(f'Memoria RAM: {self.memoria} GB')
+        print(f'Procesador: {self.procesador}')
+        print(f'Almacenamiento (interno): {self.almacenamiento} GB')
+        print(f'GPU: {self.gpu}')
         print(f'Accesorios: {self.__acesorios}')
         print(f'Garantia: {self.__garantia}')   
         
 '''Principal'''
 #Instancias de tipo computadora portatil
-lap_a=ComputadoraPortatil()
+#lap_a=ComputadoraPortatil('DDR','INTEL',40,'xx',40,5)
+# lap_b=ComputadoraPortatil()
+# lap_c=ComputadoraPortatil()
 
+#Instancias de computadora de Escritorio
+compu_a=ComputadoraEscritorio('DDR','INTEL','40','xx',1.2,20.9,10.7)
+# compu_b=ComputadoraEscritorio()
+# compu_c=ComputadoraEscritorio()
+
+#Instancias de Telefono inteligente
+tel_a=TelefonoInteligente('Dxxx','No aplica','40','xx','IOS','Gris', 'Apple')
+# tel_b=TelefonoInteligente()
+# tel_c=TelefonoInteligente()
+
+#Instancias de tableta
+tablet_a=Tablet('Dxxx',None,40,'xx',['Teclado','Lapiz','Bocina'],'1 año')
+# tablet_b=Tablet()
+# tablet_c=Tablet()
+
+#lap_a.caracteristicas()
+compu_a.caracteristicas()
+tel_a.caracteristicas()
+tablet_a.caracteristicas()
