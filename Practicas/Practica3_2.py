@@ -11,7 +11,7 @@ from abc import ABCMeta, abstractmethod
 class Mascota(metaclass=ABCMeta): 
     """Clase Madre
     """
-    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str) -> None:
+    def __init__(self, nombre: str, edad: int, duenio: str, tipo: str) -> None:
         self.__nombre = nombre
         self.__edad = edad
         self.__duenio = duenio
@@ -63,20 +63,25 @@ class Domestica(Mascota, metaclass= ABCMeta):
         Mascota (class): Clase madre
     """
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: int):
-        Mascota.__init__(nombre, edad, duenio, tipo)
+        Mascota.__init__(self, nombre, edad, duenio, tipo)
         self.__ternura = ternura
         
     #getters y setters
     @property
     def ternura(self):
-        return self.ternura
+        return self.__ternura
     @ternura.setter
     def ternura(self,ternura):
-        self.ternura =ternura
+        self.__ternura =ternura
     
     #toString
     @abstractmethod
     def __str__(self) -> str:
+        pass
+    
+    #Metodo habla
+    @abstractmethod
+    def habla(self):
         pass
 
 class Exotica (Mascota, metaclass=ABCMeta) :
@@ -86,7 +91,7 @@ class Exotica (Mascota, metaclass=ABCMeta) :
         Mascota (class): Clase madre
     """
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int):
-        Mascota.__init__(nombre, edad, duenio, tipo)
+        Mascota.__init__(self, nombre, edad, duenio, tipo)
         self.__peligro = peligro
     
     #getters y setters
@@ -102,56 +107,110 @@ class Exotica (Mascota, metaclass=ABCMeta) :
     def __str__(self) -> str:
         pass
 
+    #Metodo habla
+    @abstractmethod
+    def habla(self):
+        pass
+
 #clase submadre Domestica
 class Gato(Domestica):
     
-    def __init__(self, nombre : str, edad: int, duenio: str) -> None:
-        Mascota.__init__(nombre, edad, duenio)
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: str) -> None:
+        Domestica.__init__(self, nombre, edad, duenio, tipo, ternura)
     
-    def habla()-> str:
-        pass
+    def habla(self)-> str:
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Miauw..."\n te hablare sobre mis cuidados...')
+        print('>Comida deliciosa: ¡Necesito mi comida favorita y, de vez en cuando, un capricho especial como un poco de salmon o pollo!')
+        print('>Mimos y caricias: Necesito que me mimen y acaricien con regularidad.')
+        print('>Caja de arena impecable: Una caja de arena limpia, ¡no me gusta ensuciarme las patitas!')
+        print('>Amor y atención constante: ¡Nada me hace mas feliz que sentirme amado y atendido por mi humano osea tu!')
+        print('\n============================================================')
     
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.factor}')
+        print('\n////////////////////////////////////////////////////////////////')
 
 class Perro(Domestica):
     
-    def __init__(self, nombre: str, edad: int, duenio: str,):
-        Mascota.__init__(nombre, edad, duenio)
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: str):
+        Domestica.__init__(self, nombre, edad, duenio, tipo, ternura)
     
-    def habla()-> str:
-        pass
+    def habla(self)-> str:
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Gua..."\n te hablare sobre mis cuidados...')
+        print('>Comida deliciosa y nutritiva: ¡Me encanta la comida! ')
+        print('>Juegos y ejercicio: ¡Juega conmigo! Necesito correr, saltar y jugar para quemar energia y mantenerme feliz.')
+        print('>Paseos emocionantes: Los paseos son lo mejor. Llevame a explorar el mundo exterior y a conocer a otros perros y personas.')
+        print('>Amor y afecto: No puedo resistir un buen abrazo y caricias. ¡Dame mucho amor y atencion!')
+        print('\n============================================================')
     
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.ternura}')
+        print('\n////////////////////////////////////////////////////////////////')
     
 #clase submadre Exotica
 class Vivora(Exotica):
     
-    def __init__(self, nombre : str, edad: int, duenio: str):
-        Mascota.__init__(nombre, edad, duenio)
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int):
+        Exotica.__init__(self, nombre, edad, duenio, tipo, peligro)
 
-    def habla()-> str:
-        pass
+    def habla(self)-> str:
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Tsss..."\n te hablare sobre mis cuidados...')
+        print('>Te recuerdo que puedo ser peligroso si tengo hambre, asi que no olvides alimentarme.')
+        print('>Tenme lista una buena habit, quiero estar comodo')
+        print('>Mudo de piel cada cierto tiempo, asi que tendras que limpiarlo')
+        print('\n============================================================')
     
     def __str__(self) -> str:
-        pass
-    
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.peligro}')
+        print('\n////////////////////////////////////////////////////////////////')
 class Tigre(Exotica):
     
-    def __init__(self, nombre : str, edad: int, duenio: str)-> None:
-        Mascota.__init__(nombre, edad, duenio)
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int)-> None:
+        Exotica.__init__(self, nombre, edad, duenio,tipo, peligro)
 
-    def habla()-> None:
-        pass
+    def habla(self)-> None:
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Grrr..."\n te hablare sobre mis cuidados...')
+        print('>Ahora que soy un cachorro necesito mucha comida, no olvides alimentarme o tendre que devorarte')
+        print('>Mi habitad es lo mas importante, recuerda que crezco muy... rapido.')
+        print('>Me tendras que enseñar a casar')
+        print('\n============================================================')
     
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.peligro}')
+        print('\n////////////////////////////////////////////////////////////////')
     
 class Dinosaurio(Exotica, metaclass=ABCMeta):
     
-    def __init__(self, nombre : str, edad: int, duenio: str, tipo_dinosaurio: str)-> None:
-        Mascota.__init__(nombre, edad, duenio)
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio: str)-> None:
+        Exotica.__init__(self, nombre, edad, duenio, tipo, peligro)
         self.__tipo_dinosaurio = tipo_dinosaurio
     
     @property
@@ -168,35 +227,73 @@ class Dinosaurio(Exotica, metaclass=ABCMeta):
 
 class Brontosaurio(Dinosaurio):
     
-    def __init__(self, nombre : str, edad: int, duenio: str):
-        Mascota.__init__(nombre, edad, duenio)
-
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio = 'Brontosaurio'):
+        Dinosaurio.__init__(self, nombre, edad, duenio,tipo, peligro, tipo_dinosaurio)
+        
     def habla(self)-> str:
-        pass
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Sonido de Brontosaurio"\n te hablare sobre mis cuidados...')
+        print('>Necesito mucho espacio, un parque del tamaño de un estadio estaria bien')
+        print('>Demasiados arboles')
+        print('\n============================================================')
     
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.peligro}')
+        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
+        print('\n////////////////////////////////////////////////////////////////')
 
 class Raptor(Dinosaurio):
     
-    def __init__(self, nombre : str, edad: int, duenio: str):
-        Mascota.__init__(nombre, edad, duenio)
-    
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio = 'Raptor'):
+        Dinosaurio.__init__(self, nombre, edad, duenio, tipo, peligro, tipo_dinosaurio)
+
     def habla(self)-> str:
-        pass
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Sonido de Raptor"\n te hablare sobre mis cuidados...')
+        print('>Tengo un metabolismo demesiado rapido...')
+        print('>Necesito mucha comida y un espacio enorme')
+        print('>Espero mis comodidas o te va ir mal jaja...')
+        print('\n============================================================')       
     
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.peligro}')
+        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
+        print('\n////////////////////////////////////////////////////////////////')
     
 class Trex(Dinosaurio):
     
-    def __init__(self, nombre: str, edad: int, duenio: str) -> None:
-        Mascota.__init__(nombre, edad, duenio)
-    
+    def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio='Trex') -> None:
+        Dinosaurio.__init__(self, nombre, edad, duenio, tipo, peligro, tipo_dinosaurio)
+        
     def habla(self)-> str:
-        pass
-    
+        print('\n============================================================')
+        print('Hola yo soy tu nueva mascoata "Sonido de Trex"\n te hablare sobre mis cuidados...')
+        print('>No hace falta decir que soy imponente, asi que mejor dame un espacio solo para mi')
+        print('>Mucha comida por cierto')
+        print('>Espero no verte cuando este hambriento')
+        print('\n============================================================')
+        
     def __str__(self) -> str:
-        pass
+        print('\n////////////////////////////////////////////////////////////////')
+        print('***Mis credenciales***')
+        print(f'Nombre:{self.nombre}')
+        print(f'Edad:{self.edad}')
+        print(f'Duenio:{self.duenio}')
+        print(f'Tipo:{self.tipo}')
+        print(f'Factor de ternura: {self.peligro}')
+        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
+        print('\n////////////////////////////////////////////////////////////////')
     
     

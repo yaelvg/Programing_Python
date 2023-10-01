@@ -15,3 +15,9 @@ alumno2=Alumno() #Objeto...
 alumno2.nombre='Ale'
 alumno2.boleta='234'
 alumno2.hablar()
+class B:
+    def __str__(self) -> str:
+        t=12
+        print(t)
+x=B()
+print(x)
