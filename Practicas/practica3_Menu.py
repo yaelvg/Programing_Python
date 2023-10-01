@@ -3,10 +3,13 @@ import random as rand
 mascotas=[]
 
 def mostrar_mascotas():
+    print('\nCredenciales\n')
     for numero, mascota in enumerate(mascotas):
+        print('/////////////////////////////////////////')
         print(f'\nMascota [{numero+1}]')
         print(mascota)
-        
+        print('/////////////////////////////////////////')
+      
 def mascota_domestica(duenio: str):
     n=0
     while True:
@@ -24,15 +27,11 @@ def mascota_domestica(duenio: str):
                 print('Fuera de rango. El rango es de 1 a 10')
             elif ternura > 0 and ternura <= 10:
                 break
-    ternura =str(ternura)
-    print(type(ternura))
     nombre=input('Nombre de tu futuro y tierno acompañante: ')
     print('Su acompañante esta listo c:')
     edad=rand.randint(0,10)
-    edad=str(edad)
-    print(type(edad))
     if tipo == 1:
-        tipo=str('Perro')
+        tipo='perro'
         domestico=P3.Perro(nombre,edad,duenio,tipo,ternura)
         print('\n\n')
         domestico.habla()
@@ -64,9 +63,11 @@ def mascota_exotica(duenio):
     nombre=input('Nombre de tu futuro y peligroso acompañante: ')
     edad=rand.randint(0,10)
     if tipo == 1:
+        tipo='Vivora'
         exotico=P3.Vivora(nombre,edad,duenio,tipo,peligro)
         exotico.habla()
     elif tipo == 2:
+        tipo='Tigre'
         exotico=P3.Tigre(nombre,edad,duenio,tipo,peligro)
         exotico.habla()
     else:
@@ -74,16 +75,19 @@ def mascota_exotica(duenio):
             if n == 0:
                 tipo=int(input('¿Que especie de dinosaurio te gustaria adquirir?\n***1. Brontosaurio\n***2. Raptor\n***3. Trex\n->'))
                 if tipo == 1:
+                    tipo = 'Dinosaurio'
                     print('Una opcion aun mas terrorifica ')
                     exotico=P3.Brontosaurio(nombre,edad,duenio,tipo,peligro)
                     exotico.habla()
                     break
                 if tipo == 2:
+                    tipo = 'Dinosaurio'
                     print('Una opcion aun mas terrorifica ')
                     exotico=P3.Raptor(nombre,edad,duenio,tipo,peligro)
                     exotico.habla()
                     break
                 if tipo == 3:
+                    tipo = 'Dinosaurio'
                     print('Una opcion aun mas terrorifica ')
                     exotico=P3.Trex(nombre,edad,duenio,tipo,peligro)
                     exotico.habla()
@@ -114,7 +118,7 @@ def menu() -> None:
             
             mascota_exotica(duenio)
         elif opcion == "3":
-            print('Disfruta la compañia de tu(s) mascota(s)')
+            print('\nDisfruta la compañia de tu(s) mascota(s)\n')
             break
         else:
             print("Opción no valida, seleccione una del menu.")

@@ -128,14 +128,7 @@ class Gato(Domestica):
         print('\n============================================================')
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.factor}')
-        print('\n////////////////////////////////////////////////////////////////')
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de ternura: {self.ternura}'
 
 class Perro(Domestica):
     
@@ -152,14 +145,8 @@ class Perro(Domestica):
         print('\n============================================================')
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.ternura}')
-        print('\n////////////////////////////////////////////////////////////////')
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de ternura: {self.ternura}'
+
     
 #clase submadre Exotica
 class Vivora(Exotica):
@@ -176,14 +163,8 @@ class Vivora(Exotica):
         print('\n============================================================')
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.peligro}')
-        print('\n////////////////////////////////////////////////////////////////')
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}'
+
 class Tigre(Exotica):
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int)-> None:
@@ -198,14 +179,8 @@ class Tigre(Exotica):
         print('\n============================================================')
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.peligro}')
-        print('\n////////////////////////////////////////////////////////////////')
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}'
+
     
 class Dinosaurio(Exotica, metaclass=ABCMeta):
     
@@ -238,15 +213,8 @@ class Brontosaurio(Dinosaurio):
         print('\n============================================================')
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.peligro}')
-        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
-        print('\n////////////////////////////////////////////////////////////////')
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}\nTipo de dinosaurio: {self.tipo_dinosaurio}'
+
 
 class Raptor(Dinosaurio):
     
@@ -262,16 +230,8 @@ class Raptor(Dinosaurio):
         print('\n============================================================')       
     
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.peligro}')
-        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
-        print('\n////////////////////////////////////////////////////////////////')
-    
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}\nTipo de dinosaurio: {self.tipo_dinosaurio}'
+
 class Trex(Dinosaurio):
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio='Trex') -> None:
@@ -286,14 +246,4 @@ class Trex(Dinosaurio):
         print('\n============================================================')
         
     def __str__(self) -> str:
-        print('\n////////////////////////////////////////////////////////////////')
-        print('***Mis credenciales***')
-        print(f'Nombre:{self.nombre}')
-        print(f'Edad:{self.edad}')
-        print(f'Duenio:{self.duenio}')
-        print(f'Tipo:{self.tipo}')
-        print(f'Factor de ternura: {self.peligro}')
-        print(f'Tipo de dinosaurio: {self.tipo_dinosaurio}')
-        print('\n////////////////////////////////////////////////////////////////')
-    
-    
+        return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}\nTipo de dinosaurio: {self.tipo_dinosaurio}'
