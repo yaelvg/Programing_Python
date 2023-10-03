@@ -9,15 +9,25 @@ from abc import ABCMeta, abstractmethod
 
 #Clase madre
 class Mascota(metaclass=ABCMeta): 
-    """Clase Madre
+    """Clase abstracta madre
     """
     def __init__(self, nombre: str, edad: int, duenio: str, tipo: str) -> None:
+        """Constructor de la clase madre Mascota
+
+        Args:
+            nombre (str): Nombre de la mascota
+            edad (int): Edad de la mascota
+            duenio (str): Nombre del duenio
+            tipo (str): Clasificacion de la mascota
+        """
+        
+        '''Se inicilizan los atributos y asi solo para las clases que adjunten nuevos atributos'''
         self.__nombre = nombre
         self.__edad = edad
         self.__duenio = duenio
         self.__tipo = tipo
     
-    #getters y setters
+    #Getters y setters  (Encapsulamiento)
     @property
     def nombre(self):
         return self.__nombre
@@ -49,52 +59,75 @@ class Mascota(metaclass=ABCMeta):
     #Metodo habla
     @abstractmethod
     def habla(self):
+        """Mostrara cuidados y caracteristicas dependiendo la clase haciendo una sobrecarga(Polimorfismo)
+        """
         pass
     
     #Metodo tostring
     @abstractmethod
     def __str__(self) -> str:
+        """Mostrara en consola los atributos caracteristicos de cada clase
+
+        Returns:
+            str: Retorna solo datos de tipo str
+        """
         pass
 
 class Domestica(Mascota, metaclass= ABCMeta):
-    """Clase Domestica heradada
+    """Clase heradada con un atributo adicional 'ternura'
+        (ABSTRACTA)
 
     Args:
         Mascota (class): Clase madre
     """
+    
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: int):
+        """Constructor de la clase Domestica
+
+        Args:
+            ternura (int): numero de la ternura en escalra (1-10)
+        """
+        
+        '''Se inicializan los atributos de la clase superior "Mascota" '''        
         Mascota.__init__(self, nombre, edad, duenio, tipo)
         self.__ternura = ternura
         
-    #getters y setters
+    #Getters y setters  (Encapsulamiento)
     @property
     def ternura(self):
         return self.__ternura
     @ternura.setter
     def ternura(self,ternura):
         self.__ternura =ternura
-    
-    #toString
-    @abstractmethod
-    def __str__(self) -> str:
-        pass
-    
+        
     #Metodo habla
     @abstractmethod
     def habla(self):
         pass
 
-class Exotica (Mascota, metaclass=ABCMeta) :
-    """Clase Exotica heredada
+    #toString
+    @abstractmethod
+    def __str__(self) -> str:
+        pass
 
+class Exotica (Mascota, metaclass=ABCMeta) :
+    """Clase heredada con un atributo adicional 'peligro'
+        (ABSTRACTA)
     Args:
         Mascota (class): Clase madre
     """
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int):
+        """Constructor de la clase heredada
+
+        Args:
+            peligro (int): Numero de peligro en un rango (1-10)
+        """
+        
+        '''Se inicializan los atributos de la clase superior "Mascota" '''        
         Mascota.__init__(self, nombre, edad, duenio, tipo)
         self.__peligro = peligro
     
-    #getters y setters
+    #Getters y setters  (Encapsulamiento)
     @property
     def peligro(self):
         return self.__peligro
@@ -114,8 +147,15 @@ class Exotica (Mascota, metaclass=ABCMeta) :
 
 #clase submadre Domestica
 class Gato(Domestica):
+    """Clase heredada
+    
+    Args:
+        Domestica (class): Clase Domestica (submadre)
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: str) -> None:
+        
+        '''Se inicializa los atributos de la clase submadre (Domestica)'''
         Domestica.__init__(self, nombre, edad, duenio, tipo, ternura)
     
     def habla(self)-> str:
@@ -131,8 +171,15 @@ class Gato(Domestica):
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de ternura: {self.ternura}'
 
 class Perro(Domestica):
+    """Clase heredada
+
+    Args:
+        Domestica (class): Clase Domestica (submadre)
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, ternura: str):
+        
+        '''Se inicializa los atributos de la clase submadre (Domestica)'''
         Domestica.__init__(self, nombre, edad, duenio, tipo, ternura)
     
     def habla(self)-> str:
@@ -148,10 +195,16 @@ class Perro(Domestica):
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de ternura: {self.ternura}'
 
     
-#clase submadre Exotica
 class Vivora(Exotica):
+    """Clase heradada
+
+    Args:
+        Exotica (class): clase Exotica (submadre)
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int):
+        
+        '''Se inicializa los atributos de la clase submadre (Exotica)'''
         Exotica.__init__(self, nombre, edad, duenio, tipo, peligro)
 
     def habla(self)-> str:
@@ -166,8 +219,15 @@ class Vivora(Exotica):
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}'
 
 class Tigre(Exotica):
+    """Clase heredada
+
+    Args:
+        Exotica (class): Clase Exotica (Submadre)
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int)-> None:
+        
+        '''Se inicializa los atributos de la clase submadre (Exotica)'''
         Exotica.__init__(self, nombre, edad, duenio,tipo, peligro)
 
     def habla(self)-> None:
@@ -183,11 +243,20 @@ class Tigre(Exotica):
 
     
 class Dinosaurio(Exotica, metaclass=ABCMeta):
+    """Clase heredada (EXOTICA) con un atributo adicional 'tipo_dinosaurio
+        (ABSTRACTA)
+
+    Args:
+        Exotica (class): Clase Exotica (Submadre)
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio: str)-> None:
+        
+        '''Se inicializan los atributos de la clase Exotica'''
         Exotica.__init__(self, nombre, edad, duenio, tipo, peligro)
         self.__tipo_dinosaurio = tipo_dinosaurio
-    
+        
+    #Getters y setters  (Encapsulamiento)    
     @property
     def tipo_dinosaurio(self):
         return self.__tipo_dinosaurio
@@ -201,6 +270,11 @@ class Dinosaurio(Exotica, metaclass=ABCMeta):
 #Subclasese de dinosaurio
 
 class Brontosaurio(Dinosaurio):
+    """Clase heredada
+
+    Args:
+        Dinosaurio (class): _description_
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio = 'Brontosaurio'):
         Dinosaurio.__init__(self, nombre, edad, duenio,tipo, peligro, tipo_dinosaurio)
