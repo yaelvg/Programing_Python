@@ -273,10 +273,12 @@ class Brontosaurio(Dinosaurio):
     """Clase heredada
 
     Args:
-        Dinosaurio (class): _description_
+        Dinosaurio (class): Clase heredada derivada de Exotica
     """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio = 'Brontosaurio'):
+       
+        '''Se inicilizan los atributos de la clase dinosaurio'''
         Dinosaurio.__init__(self, nombre, edad, duenio,tipo, peligro, tipo_dinosaurio)
         
     def habla(self)-> str:
@@ -291,6 +293,11 @@ class Brontosaurio(Dinosaurio):
 
 
 class Raptor(Dinosaurio):
+    """Clase heredada
+
+    Args:
+        Dinosaurio (_type_): Clase heredada derivada de Exotica
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio = 'Raptor'):
         Dinosaurio.__init__(self, nombre, edad, duenio, tipo, peligro, tipo_dinosaurio)
@@ -307,6 +314,11 @@ class Raptor(Dinosaurio):
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}\nTipo de dinosaurio: {self.tipo_dinosaurio}'
 
 class Trex(Dinosaurio):
+    """Clase heredada
+
+    Args:
+        Dinosaurio (class): Clase heredada derivada de Exotica
+    """
     
     def __init__(self, nombre : str, edad: int, duenio: str, tipo: str, peligro: int, tipo_dinosaurio='Trex') -> None:
         Dinosaurio.__init__(self, nombre, edad, duenio, tipo, peligro, tipo_dinosaurio)
