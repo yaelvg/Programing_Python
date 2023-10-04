@@ -107,9 +107,6 @@ class ComputadoraPortatil (Computadora):
             
     #Sobrecarga de metodos
     def caracteristicas(self):
-        """Muestra las caracteristicas de cada intancia, las cuales con los atributos de la
-        clase madre abstracta. 
-        """
         print('\n\t\t********Factura********\n')
         print('\tComputadora Portatil:')
         print(f'Memoria RAM: {self.memoria} GB')
@@ -164,9 +161,6 @@ class ComputadoraEscritorio (Computadora):
         
     #Sobrecarga de metodos
     def caracteristicas(self):
-        """Muestra las caracteristicas de cada intancia, las cuales con los atributos de la
-        clase madre abstracta.
-        """
         print('\n\t\t********Factura********\n')
         print('\tComputadora de Escritorio:')
         print(f'Memoria RAM: {self.memoria} GB')
@@ -216,9 +210,6 @@ class TelefonoInteligente (Computadora):
     #Sobrecarga de metodos
 
     def caracteristicas(self):
-        """Muestra las caracteristicas de cada intancia, las cuales con los atributos de la
-        clase madre abstracta.
-        """
         print('\n\t\t********Factura********\n')
         print('\tTelefono Inteligente:')
         print(f'Memoria RAM: {self.memoria} GB')
@@ -264,9 +255,6 @@ class Tablet (Computadora):
     
     #Sobrecarga de metodos
     def caracteristicas(self):
-        """Muestra las caracteristicas de cada intancia, las cuales con los atributos de la
-        clase madre abstracta.
-        """
         print('\n\t\t********Factura********\n')
         print('\tComputadora de Escritorio:')
         print(f'Memoria RAM: {self.memoria} GB')
@@ -275,6 +263,8 @@ class Tablet (Computadora):
         print(f'GPU: {self.gpu}')
         print(f'Accesorios: {self.__acesorios}')
         print(f'Garantia: {self.__garantia}')   
+        
+        
         
 '''Principal'''
 #Instancias de tipo computadora portatil incializadas
@@ -298,3 +288,5 @@ tablet_b=Tablet('8 RAM','Intel ATOM','64','Adreno 640',['Funda', 'Lapiz','Audifo
 tablet_c=Tablet('8 RAM','Intel Core','128','Nvidia',['Lapiz','smartwatch'],'1 año')
 
 
+#Llamado de metodos
+lap_a.caracteristicas()
