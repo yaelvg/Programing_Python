@@ -145,7 +145,6 @@ class Exotica (Mascota, metaclass=ABCMeta) :
     def habla(self):
         pass
 
-#clase submadre Domestica
 class Gato(Domestica):
     """Clase heredada
     
@@ -193,9 +192,8 @@ class Perro(Domestica):
     
     def __str__(self) -> str:
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de ternura: {self.ternura}'
-
-    
-class Vivora(Exotica):
+   
+class Vibora(Exotica):
     """Clase heradada
 
     Args:
@@ -240,7 +238,6 @@ class Tigre(Exotica):
     
     def __str__(self) -> str:
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}'
-
     
 class Dinosaurio(Exotica, metaclass=ABCMeta):
     """Clase heredada (EXOTICA) con un atributo adicional 'tipo_dinosaurio
@@ -267,7 +264,6 @@ class Dinosaurio(Exotica, metaclass=ABCMeta):
     @abstractmethod
     def __str__(self) -> str:
         pass
-#Subclasese de dinosaurio
 
 class Brontosaurio(Dinosaurio):
     """Clase heredada
@@ -290,7 +286,6 @@ class Brontosaurio(Dinosaurio):
     
     def __str__(self) -> str:
         return f'Nombre: {self.nombre}\nEdad: {self.edad} meses\nDuenio: {self.duenio}\nTipo: {self.tipo}\nFactor de peligro: {self.peligro}\nTipo de dinosaurio: {self.tipo_dinosaurio}'
-
 
 class Raptor(Dinosaurio):
     """Clase heredada

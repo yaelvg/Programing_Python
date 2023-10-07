@@ -11,15 +11,23 @@ def mostrar_mascotas():
         print('/////////////////////////////////////////')
       
 def mascota_domestica(duenio: str):
+    """Funcion destinada para hacer el registro de una mascota domestica
+
+    Args:
+        duenio (str): Nombre del dueño de las mascotas
+    """
+    #Se incicializa en 0 para poder preguntar solo una vez que animal adquirir
     n=0
     while True:
         if n == 0:
             tipo=int(input('¿Que animal te gustaria adquirir?\n***1. Perro\n***2. Gato\n->'))
+            
             if tipo == 1 or tipo == 2:
                 print('Buena y muy adorable eleccion!!!')
                 n+=1
             else:
-                print('Opcion no valida, intentelo de nuevo') 
+                print('Opcion no valida, intentelo de nuevo')
+                 
         if n != 0 :
             ternura=int(input('Nivel de ternura rango(1-10) ->'))
             
@@ -27,9 +35,13 @@ def mascota_domestica(duenio: str):
                 print('Fuera de rango. El rango es de 1 a 10')
             elif ternura > 0 and ternura <= 10:
                 break
+            
     nombre=input('Nombre de tu futuro y tierno acompañante: ')
     print('Su acompañante esta listo c:')
+    
+    #Adigan la edad aleatoriamente en un rango del 1 al 10
     edad=rand.randint(0,10)
+    
     if tipo == 1:
         tipo='perro'
         domestico=P3.Perro(nombre,edad,duenio,tipo,ternura)
@@ -44,14 +56,23 @@ def mascota_domestica(duenio: str):
     mascotas.append(domestico)
         
 def mascota_exotica(duenio):
+    """Funcion destinada para hacer el registro de una mascota exotica
+
+    Args:
+        duenio (str): Nombre del dueño de las mascotas
+    """
+    
+    #Se incicializa en 0 para poder preguntar solo una vez que animal adquirir
     n=0
     while True:
+        
         if n == 0:
             tipo=int(input('¿Que animal te gustaria adquirir?\n***1. Vivora\n***2. Tigre\n***3. Dinosaurio\n->'))
             if tipo == 1 or tipo == 2 or tipo == 3:
                 print('Buena y muy peligrosa eleccion!!!')
                 n+=1
             else: print('Opcion no valida, intentelo de nuevo') 
+            
         if n != 0 :
             peligro=int(input('Nivel de peligro rango(1-10) ->'))
             
@@ -60,8 +81,11 @@ def mascota_exotica(duenio):
             elif peligro > 0 and peligro <= 10:
                 n=0
                 break
+            
+    #Adigan la edad aleatoriamente en un rango del 1 al 10
     nombre=input('Nombre de tu futuro y peligroso acompañante: ')
     edad=rand.randint(0,10)
+    
     if tipo == 1:
         tipo='Vivora'
         exotico=P3.Vivora(nombre,edad,duenio,tipo,peligro)
@@ -98,6 +122,8 @@ def mascota_exotica(duenio):
     mascotas.append(exotico)
 
 def menu() -> None:
+    """Funcion para llevar el manejo del menu
+    """
     n=0
     while True:
         
@@ -124,4 +150,7 @@ def menu() -> None:
             print("Opción no valida, seleccione una del menu.")
         n+=1
     mostrar_mascotas()
+
+'''PRINCIPAL'''
 menu()
+

@@ -290,3 +290,6 @@ tablet_c=Tablet('8 RAM','Intel Core','128','Nvidia',['Lapiz','smartwatch'],'1 a√
 
 #Llamado de metodos
 lap_a.caracteristicas()
+compu_b.caracteristicas()
+tel_c.caracteristicas()
+tablet_a.caracteristicas()
