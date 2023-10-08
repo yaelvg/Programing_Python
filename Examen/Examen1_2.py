@@ -76,6 +76,7 @@ class Agenda():
         for contacto in self.__lista:
             if contacto.numero == numero:
                 print(contacto)
+                x=1
         if x == 0:
             print('Datos no encontrados')
     

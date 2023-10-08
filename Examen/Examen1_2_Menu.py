@@ -10,9 +10,9 @@ instancias de la clase Contacto, esto me facilita poder agregarlas al atributo "
 agenda_telefonica=P.Agenda()
 
 '''Se manda a llamar el metodo de la clase Agenda y se inicializa con ciertos atributos'''
-agenda_telefonica.registros('Alejandro', 5551533609)
+agenda_telefonica.registros('Alejandro',5551533609)
 agenda_telefonica.registros('Adis',5578980098)
-agenda_telefonica.registros('Marco', 5567892178)
+agenda_telefonica.registros('Marco',5567892178)
 
 #Muestra los contactos en la la agenda
 agenda_telefonica.contactos()
@@ -27,7 +27,7 @@ agenda_telefonica.contactos()
 print('/////////////////')
 
 #Busqued por nombre del contacto
-agenda_telefonica.busqueda_nombre('x')
+agenda_telefonica.busqueda_nombre('Marco')
 print('/////////////////')
 
 #Busqued por nombre del contacto
