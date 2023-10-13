@@ -7,7 +7,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__(*parent, **flags)
         self.setupUi(self)
         #Conecta el boton
-        self.pushButton.clicked.connect(self.showMessage)
+        self.pushButton_2.clicked.connect(self.showMessage)
         
     def showMessage(self):
         QMessageBox.information(self, 'Message', f'Hola {self.lineEdit.text()}')
