@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/j0z3ph/Repos/2024-1/PA/C11/calculadora.ui'
+# Form implementation generated from reading ui file 'c:\Users\aleva\OneDrive - Instituto Politecnico Nacional\Desktop\Documentos\Programing_Python\GUI\Calculadora Clase\calculadora.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
