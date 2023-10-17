@@ -27,8 +27,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_11.clicked.connect(self.numberPressed)
         self.pushButton_12.clicked.connect(self.numberPressed)
         self.pushButton_13.clicked.connect(self.numberPressed)
+        
         # Punto
         self.pushButton_2.clicked.connect(self.decimal_point)
+        
         #Operaciones
         self.pushButton_15.clicked.connect(self.multiplicar)
         self.pushButton_7.clicked.connect(self.sumar)
@@ -36,6 +38,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_16.clicked.connect(self.division)
         self.pushButton_28.clicked.connect(self.p_izquierdo)
         self.pushButton_29.clicked.connect(self.p_derecho)
+        #PI
 
 
 
@@ -57,8 +60,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setNumber(number)
         
     def decimal_point(self):
-        if self.__internal_str.find(".") == -1:
-            self.__internal_str +=  "."
+        #if self.__internal_str.find(".") == -1:
+        self.__internal_str += "."
          
     def setNumber(self, number: str):
         self.__internal_str += number
@@ -79,28 +82,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.label.setText(f"<html><head/><body><p align=\"right\">{number}</p></body></html>")
     
     def multiplicar(self):
-        txt=self.label.text()
-        self.setRichText('*')
+        self.__internal_str += "*"
             
     def division(self):
-        if self.__internal_str.find("/") == -1:
-            self.__internal_str +=  "/"
+        #if self.__internal_str.find("/") == -1:
+        self.__internal_str +=  "/"
             
     def sumar(self):
-        if self.__internal_str.find("+") == -1:
-            self.__internal_str +=  "+"
+        #if self.__internal_str.find("+") == -1:
+        self.__internal_str +=  "+"
 
     def restar(self):
-        if self.__internal_str.find("-") == -1:
-            self.__internal_str +=  "-"
+        #if self.__internal_str.find("-") == -1:
+        self.__internal_str +=  "-"
 
     def p_izquierdo(self):
-        if self.__internal_str.find("(") == -1:
-            self.__internal_str +=  "("
+        #if self.__internal_str.find("(") == -1:
+        self.__internal_str +=  "("
       
     def p_derecho(self):
-        if self.__internal_str.find(")") == -1:
-            self.__internal_str +=  ")"
+        #if self.__internal_str.find(")") == -1:
+        self.__internal_str +=  ")"
             
                         
 if __name__ == "__main__":
