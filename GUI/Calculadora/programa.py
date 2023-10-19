@@ -39,6 +39,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_28.clicked.connect(self.p_izquierdo)
         self.pushButton_29.clicked.connect(self.p_derecho)
         #PI
+        self.pushButton_19.clicked.connect(self.pi)
+        #Resultado
+        self.pushButton_3.clicked.connect(self.evaluator)
+        
 
 
 
@@ -56,6 +60,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.decimal_point()
             
     def numberPressed(self):
+        """Proporciona el numero o dato asociado con el widget
+        """
+        
         number = self.sender().text()
         self.setNumber(number)
         
@@ -69,6 +76,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setRichText(self.__internal_str) # Con texto con formato
    
     def number2string(self, num: str) -> str:
+        """Converts a number to a string
+
+        Args:
+            num (str): _description_
+
+        Returns:
+            str: _description_
+        """
         try:
             number = float(num)
             if number.is_integer():
@@ -76,13 +91,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 return str(number)
         except:
-            return num 
+            return str(num) 
         
     def setRichText(self, number:str):
-        self.label.setText(f"<html><head/><body><p align=\"right\">{number}</p></body></html>")
+        
+        #self.label.setText(f"<html><head/><body><p align=\"right\">{number}</p></body></html>")
+        self.label.setText(f"{number}")
     
     def multiplicar(self):
-        self.__internal_str += "*"
+        tx= self.label.text()
+        self.label.setText(tx + "*")
+        #self.__internal_str += "*"
             
     def division(self):
         #if self.__internal_str.find("/") == -1:
@@ -103,7 +122,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def p_derecho(self):
         #if self.__internal_str.find(")") == -1:
         self.__internal_str +=  ")"
-            
+        #self.label.setText(self.__internal_str + ")"
+    def pi(self):
+        self.__internal_str += "3.14159"
+    
+    def evaluator(self):
+        try:
+            x=self.label.text()
+            ans=eval(x)
+            print(ans)
+            self.setRichText(ans)
+        except:
+            self.setRichText('ERROR')
                         
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
