@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(427, 369)
+        MainWindow.resize(427, 354)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\aleva\\OneDrive - Instituto Politecnico Nacional\\Desktop\\Documentos\\Programing_Python\\GUI\\Calculadora\\../../../../../../OneDrive/Imágenes/calculator.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
@@ -128,7 +128,7 @@ class Ui_MainWindow(object):
         self.pushButton_16.setGeometry(QtCore.QRect(370, 120, 41, 31))
         self.pushButton_16.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));\n"
 "border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"font: 24pt \"Bodoni MT Condensed\";\n"
+"font: 18pt \"Bodoni MT Condensed\";\n"
 "color: rgb(255, 255, 255);")
         self.pushButton_16.setObjectName("pushButton_16")
         self.pushButton_17 = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.pushButton_19.setGeometry(QtCore.QRect(220, 120, 41, 31))
         self.pushButton_19.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));\n"
 "border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"font: 16pt \"Bodoni MT Condensed\";\n"
+"font: 10pt \"Bodoni MT Condensed\";\n"
 "color: rgb(255, 255, 255);")
         self.pushButton_19.setObjectName("pushButton_19")
         self.pushButton_20 = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -172,6 +172,7 @@ class Ui_MainWindow(object):
 "border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "font: 16pt \"Bodoni MT Condensed\";\n"
 "color: rgb(255, 255, 255);")
+        self.pushButton_22.setShortcut("")
         self.pushButton_22.setObjectName("pushButton_22")
         self.pushButton_23 = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButton_23.setGeometry(QtCore.QRect(80, 220, 51, 41))
@@ -240,7 +241,6 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QtCore.QRect(10, 10, 401, 71))
         self.label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 18pt \"Microsoft New Tai Lue\";")
-        self.label.setText("")
         self.label.setObjectName("label")
         self.line = QtWidgets.QFrame(parent=self.centralwidget)
         self.line.setGeometry(QtCore.QRect(10, 90, 401, 16))
@@ -267,6 +267,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calcooladora"))
         self.pushButton.setText(_translate("MainWindow", "0"))
+        self.pushButton.setShortcut(_translate("MainWindow", "0"))
         self.pushButton_2.setText(_translate("MainWindow", "."))
         self.pushButton_2.setShortcut(_translate("MainWindow", "."))
         self.pushButton_3.setText(_translate("MainWindow", "="))
@@ -291,10 +292,10 @@ class Ui_MainWindow(object):
         self.pushButton_13.setShortcut(_translate("MainWindow", "7"))
         self.pushButton_14.setText(_translate("MainWindow", "-"))
         self.pushButton_15.setText(_translate("MainWindow", "*"))
-        self.pushButton_16.setText(_translate("MainWindow", "÷"))
+        self.pushButton_16.setText(_translate("MainWindow", "/"))
         self.pushButton_17.setText(_translate("MainWindow", "Mod"))
         self.pushButton_18.setText(_translate("MainWindow", "Sqrt"))
-        self.pushButton_19.setText(_translate("MainWindow", "Pi"))
+        self.pushButton_19.setText(_translate("MainWindow", "3.141516"))
         self.pushButton_20.setText(_translate("MainWindow", "e"))
         self.pushButton_21.setText(_translate("MainWindow", "ln"))
         self.pushButton_22.setText(_translate("MainWindow", "Sin"))
@@ -307,4 +308,5 @@ class Ui_MainWindow(object):
         self.pushButton_29.setText(_translate("MainWindow", ")"))
         self.pushButton_30.setText(_translate("MainWindow", "x^2"))
         self.pushButton_31.setText(_translate("MainWindow", "x^n"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p>0</p></body></html>"))
         self.menuCalculadora.setTitle(_translate("MainWindow", "Calculadora"))

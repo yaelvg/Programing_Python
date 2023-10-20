@@ -351,11 +351,11 @@ color: rgb(255, 255, 255);</string>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
-font: 24pt &quot;Bodoni MT Condensed&quot;;
+font: 18pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>÷</string>
+     <string>/</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_17">
@@ -408,11 +408,11 @@ color: rgb(255, 255, 255);</string>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
-font: 16pt &quot;Bodoni MT Condensed&quot;;
+font: 10pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Pi</string>
+     <string>3.141516</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
@@ -660,7 +660,7 @@ color: rgb(255, 255, 255);</string>
 font: 18pt &quot;Microsoft New Tai Lue&quot;;</string>
     </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="Line" name="line">

@@ -32,14 +32,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.decimal_point)
         
         #Operaciones
-        self.pushButton_15.clicked.connect(self.multiplicar)
-        self.pushButton_7.clicked.connect(self.sumar)
-        self.pushButton_14.clicked.connect(self.restar)
-        self.pushButton_16.clicked.connect(self.division)
-        self.pushButton_28.clicked.connect(self.p_izquierdo)
-        self.pushButton_29.clicked.connect(self.p_derecho)
+        self.pushButton_15.clicked.connect(self.numberPressed)
+        self.pushButton_7.clicked.connect(self.numberPressed)
+        self.pushButton_14.clicked.connect(self.numberPressed)
+        self.pushButton_16.clicked.connect(self.numberPressed)
+        self.pushButton_28.clicked.connect(self.numberPressed)
+        self.pushButton_29.clicked.connect(self.numberPressed)
         #PI
-        self.pushButton_19.clicked.connect(self.pi)
+        self.pushButton_19.clicked.connect(self.numberPressed)
         #Resultado
         self.pushButton_3.clicked.connect(self.evaluator)
         
@@ -98,37 +98,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #self.label.setText(f"<html><head/><body><p align=\"right\">{number}</p></body></html>")
         self.label.setText(f"{number}")
     
-    def multiplicar(self):
-        tx= self.label.text()
-        self.label.setText(tx + "*")
-        #self.__internal_str += "*"
-            
-    def division(self):
-        #if self.__internal_str.find("/") == -1:
-        self.__internal_str +=  "/"
-            
-    def sumar(self):
-        #if self.__internal_str.find("+") == -1:
-        self.__internal_str +=  "+"
-
-    def restar(self):
-        #if self.__internal_str.find("-") == -1:
-        self.__internal_str +=  "-"
-
-    def p_izquierdo(self):
-        #if self.__internal_str.find("(") == -1:
-        self.__internal_str +=  "("
-      
-    def p_derecho(self):
-        #if self.__internal_str.find(")") == -1:
-        self.__internal_str +=  ")"
-        #self.label.setText(self.__internal_str + ")"
+   
     def pi(self):
         self.__internal_str += "3.14159"
     
     def evaluator(self):
         try:
             x=self.label.text()
+            print(x)
             ans=eval(x)
             print(ans)
             self.setRichText(ans)
