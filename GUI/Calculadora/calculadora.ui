@@ -10,6 +10,9 @@
     <height>354</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Calcooladora</string>
   </property>
@@ -18,7 +21,7 @@
     <normaloff>../../../../../../OneDrive/Imágenes/calculator.png</normaloff>../../../../../../OneDrive/Imágenes/calculator.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(231, 231, 115, 255), stop:1 rgba(231, 231, 115, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 86, 255), stop:1 rgba(153, 153, 153, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
@@ -34,7 +37,8 @@
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -53,9 +57,9 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 127, 255), stop:1 rgba(85, 0, 127, 255));
-border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+     <string notr="true">border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
+background-color: rgb(255, 85, 0);
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
@@ -75,10 +79,10 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 187, 255, 255), stop:1 rgba(0, 187, 255, 255));
+     <string notr="true">background-color: rgb(255, 219, 158);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 20pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+</string>
     </property>
     <property name="text">
      <string>=</string>
@@ -97,7 +101,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>1</string>
@@ -119,7 +124,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>2</string>
@@ -141,7 +147,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>3</string>
@@ -162,6 +169,7 @@ color: rgb(255, 255, 255);</string>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+background-color: rgb(255, 123, 28);
 font: 24pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
@@ -182,7 +190,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>5</string>
@@ -204,7 +213,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>6</string>
@@ -226,7 +236,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>4</string>
@@ -248,7 +259,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>8</string>
@@ -270,7 +282,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>9</string>
@@ -292,7 +305,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(63, 63, 63, 255), stop:1 rgba(63, 63, 63, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>7</string>
@@ -314,6 +328,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
+background-color: rgb(255, 123, 28);
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
@@ -333,7 +348,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 24pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);</string>
     </property>
     <property name="text">
      <string>*</string>
@@ -352,7 +368,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 18pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);</string>
     </property>
     <property name="text">
      <string>/</string>
@@ -369,12 +386,13 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+background-color: rgb(255, 0, 0);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Mod</string>
+     <string>Help</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_18">
@@ -390,7 +408,8 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>Sqrt</string>
@@ -406,13 +425,13 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
-border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
-font: 10pt &quot;Bodoni MT Condensed&quot;;
+     <string notr="true">border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+background-color: rgb(255, 123, 28);
+font: 20pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>3.141516</string>
+     <string>Pi</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
@@ -425,7 +444,8 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+     <string notr="true">background-color: rgb(255, 123, 28);
+gridline-color: rgb(255, 255, 255);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
@@ -444,7 +464,7 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+     <string notr="true">background-color: rgb(255, 123, 28);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
@@ -463,7 +483,7 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+     <string notr="true">background-color: rgb(255, 123, 28);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
@@ -485,7 +505,7 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+     <string notr="true">background-color: rgb(255, 123, 28);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
@@ -504,7 +524,7 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+     <string notr="true">background-color: rgb(255, 123, 28);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
 color: rgb(255, 255, 255);</string>
@@ -526,7 +546,9 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>n!</string>
@@ -543,9 +565,12 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
+selection-background-color: rgb(85, 0, 255);
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>C</string>
@@ -564,7 +589,9 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>AC</string>
@@ -583,7 +610,9 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>(</string>
@@ -602,7 +631,9 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+</string>
     </property>
     <property name="text">
      <string>)</string>
@@ -621,7 +652,10 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+
+</string>
     </property>
     <property name="text">
      <string>x^2</string>
@@ -640,10 +674,13 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(125, 125, 125, 255), stop:1 rgba(125, 125, 125, 255));
 border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
 font: 16pt &quot;Bodoni MT Condensed&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(255, 123, 28);
+
+</string>
     </property>
     <property name="text">
-     <string>x^n</string>
+     <string>x^-1</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -660,7 +697,7 @@ color: rgb(255, 255, 255);</string>
 font: 18pt &quot;Microsoft New Tai Lue&quot;;</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="Line" name="line">
