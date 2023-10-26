@@ -8,6 +8,10 @@ import math
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
+    """Clase que contiene todos las caracteristicas y 
+    funciones de la interfase
+    """
+    
     def __init__(self, *parent, **flags) -> None:
         super().__init__(*parent, **flags)
         self.setupUi(self)
@@ -15,9 +19,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.__internal_str = "0"
         
         # AC
-        self.pushButton_27.clicked.connect(self.clear)
+        self.pushButton_27.clicked.connect(self.limpieza)
         #C
-        self.pushButton_26.clicked.connect(self.clear_2)
+        self.pushButton_26.clicked.connect(self.limpieza_2)
         
         # Numeros
         self.pushButton.clicked.connect(self.numberPressed)
@@ -34,7 +38,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         
         # Punto
-        self.pushButton_2.clicked.connect(self.decimal_point)
+        self.pushButton_2.clicked.connect(self.punto_decimal)
         
         #Operaciones
         self.pushButton_15.clicked.connect(self.numberPressed)
@@ -43,7 +47,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_16.clicked.connect(self.numberPressed)
         self.pushButton_17.clicked.connect(self.ayuda)
         self.pushButton_18.clicked.connect(self.raiz)
-        self.pushButton_28.clicked.connect(self.operator)
+        self.pushButton_28.clicked.connect(self.operador)
         self.pushButton_29.clicked.connect(self.numberPressed)
         self.pushButton_21.clicked.connect(self.logaritmo)
         self.pushButton_22.clicked.connect(self.seno)
@@ -51,6 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_24.clicked.connect(self.tangente)
         self.pushButton_30.clicked.connect(self.cuadrado)
         self.pushButton_31.clicked.connect(self.inverso)
+        
         #PI
         self.pushButton_19.clicked.connect(self.pi)
         #e
@@ -62,12 +67,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     def ayuda(self):
+        """Abre otra ventana que contienen indicaciones 
+        de como usar la calculadora
+        """
         self.ventana=QtWidgets.QMainWindow()
         self.ui=Ui_ayuda_2()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
         
-    def clear(self):
+    def limpieza(self):
+        """Limpieza total
+        """
         self.__internal_str = "0"
         self.setRichText("0")
         
@@ -81,14 +91,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def numberPressed(self):
         """Proporciona el numero o dato asociado con el widget
         """
-        
         number = self.sender().text()
         self.setNumber(number)
         
-    def decimal_point(self):
-        x=self.label.text()
-        print(x)
         
+    def punto_decimal(self):
+        x=self.label.text()
         if x == '0':
             self.__internal_str = "."
             self.setRichText(self.__internal_str) # Con texto con formato
@@ -96,11 +104,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
            self.__internal_str =x + "."
            self.setRichText(self.__internal_str)
-           
-        # if self.__internal_str.find(".") == -1:
-        #     self.__internal_str += "."
-         
+
     def setNumber(self, number: str):
+        """Coloca el pantalla el numro que digito el usuario
+
+        Args:
+            number (str): Numero que digito
+        """
         self.__internal_str += number
         self.__internal_str = self.number2string(self.__internal_str)
         self.setRichText(self.__internal_str) # Con texto con formato
@@ -109,10 +119,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """Converts a number to a string
 
         Args:
-            num (str): _description_
+            num (str): Numero escrito por el usuario
 
         Returns:
-            str: _description_
+            str: 
         """
         try:
             number = float(num)
@@ -124,6 +134,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return str(num) 
         
     def setRichText(self, number: str):
+        """Se encarga de colocarlo en pantalla
+        """
         
         #self.label.setText(f"<html><head/><body><p align=\"right\">{number}</p></body></html>")
         self.label.setText(f"{number}")
@@ -142,49 +154,51 @@ class MainWindow(QMainWindow, Ui_MainWindow):
            self.__internal_str =x + "3.14159"
            self.setRichText(self.__internal_str)
            
+           
     def e(self):
         x=self.label.text()
         print(x)
         
         if x == '0':
             self.__internal_str = "2.71828"
-            self.setRichText(self.__internal_str) # Con texto con formato
+            self.setRichText(self.__internal_str) 
 
             
         else:
            self.__internal_str =x + "2.71828"
            self.setRichText(self.__internal_str)
            
-    def operator(self):
+           
+    def operador(self):
         x=self.label.text()
         print(x)
         
         if x == '0':
             self.__internal_str = "("
-            self.setRichText(self.__internal_str) # Con texto con formato
+            self.setRichText(self.__internal_str)
 
         else:
            self.__internal_str =x + "("
            self.setRichText(self.__internal_str)
+           
          
     def evaluator(self):
+        """Evalua cada operacion que se encuentre en  la etiqueta
+        """
         try:
             x=self.label.text()
-            print(x)
             ans=eval(x)
-            print(ans)
             self.setRichText(ans)
         except:
             self.setRichText('ERROR')
             
-    def clear_2(self):
+    def limpieza_2(self):
+        """Elima el ultimo termino escrito por el usuario
+        """
         x=self.label.text()
-        print(x)
-        y=len(x)
-        y-=1
-        window.clear()
+        y=len(x)-1
+        window.limpieza()
         x=x[0:y]
-        print(x)
         self.__internal_str =x + ""
         self.setRichText(self.__internal_str)
                     
@@ -201,6 +215,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
            self.setRichText(self.__internal_str)
            
     def factorial(self):
+        """Genera factorial 
+        """
         n=self.label.text()
         try:
             n=int(n)
@@ -211,6 +227,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.setRichText('ERROR')
     
     def logaritmo(self):
+        """Genera logaritmo del numero
+        """
         n=self.label.text()
         try:
             n=float(n)
@@ -219,7 +237,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         except:
             self.setRichText('ERROR')
+            
     def seno(self):
+        """Seno en grado
+        """
         n=self.label.text()
         try:
             n=float(n)
@@ -228,7 +249,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         except:
             self.setRichText('ERROR')  
+            
     def coseno(self):
+        """Coseno en grados
+        """
         n=self.label.text()
         try:
             n=float(n)
@@ -237,7 +261,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         except:
             self.setRichText('ERROR') 
+            
     def tangente(self):
+        """Tangente en grados
+        """
         n=self.label.text()
         try:
             n=float(n)
@@ -246,7 +273,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         except:
             self.setRichText('ERROR') 
+            
     def cuadrado(self):
+        """Eleva al cuadrado
+        """
         n=self.label.text()
         try: 
             n=float(n)
@@ -256,6 +286,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.setRichText('ERROR') 
 
     def inverso(self):
+        """Inverso de un numero
+        """
         n=self.label.text()
         try: 
             n=float(n)
@@ -265,6 +297,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.setRichText('ERROR')
             
     def raiz(self):
+        """Genera la raiz cuadrada del numero escrito
+        """
         n=self.label.text()
         try: 
             n=float(n)
@@ -274,9 +308,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.setRichText('ERROR')  
     
 
+
+'''Principal'''
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    window.clear()
+    window.limpieza()
     sys.exit(app.exec())
