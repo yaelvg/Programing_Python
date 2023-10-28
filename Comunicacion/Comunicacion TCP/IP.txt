@@ -1,6 +1,8 @@
 //////////////Principales protocolos de comunicacion
 
 TCP CONEXION ENTRE DOS ANFRITIONES
+(Rompe un archivo en pedazos para poder mandarlo en muchos paquetes)
+
 IP protocolo de internet
 Anlaogia
 tpc se encarga de llevar la informacion a la cierta direccion que es la ip
@@ -11,3 +13,32 @@ Sincronizacion para la transmicion d e datos, se realiza una prueba que la tcp v
 passando por cada rooter asignandole una etiqueta, cuadno hay una confirmacion de recepcion empieza la transmicion de datos
 SERVIDOR-CLIENTE
 Investigacion....
+
+27/10/23
+capas con las que cuenta esta cominicacion
+
+    capa de enlace
+    capa de red
+    capa de transporte 
+    capa de aplicacion
+
+MODELO OSI
+
+    APLICACION
+    PRESENTACION
+    SESION
+    TRANSPORTE
+    RED
+    ENLACE DE DATOS
+    FISICA
+
+   ************** UDP *********************
+   UDP CON no espera una confirmacion del otro ususario, pero lo 
+   es mas rapida esa transmicion de datos( Protocolo más rapido)
+
+   (Redes)
+    mesh
+    Sockets
+    canalas de comunicacion que permiter procesesno relacionados intercambier datos localmente y entre Redes
+    API APLICATION PROGRAMMING INTERFACE
+    Todas las comunicaciones de internte se manejan ór sockets
