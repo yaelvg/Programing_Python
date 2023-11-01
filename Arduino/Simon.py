@@ -175,6 +175,4 @@ while True:
             else:
                 error()
                 exit()
-    paso_nivel()
-        
-    
+        paso_nivel()
