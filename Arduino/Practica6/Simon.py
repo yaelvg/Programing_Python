@@ -14,6 +14,7 @@ class Principal(QMainWindow, Ui_PrincipalSimon):
         self.ventana=MainWindow()
         self.instruc=Instrucciones()
 
+        
 
         self.pushButton.clicked.connect(self.jugar)
         self.pushButton_2.clicked.connect(self.instrucciones)
@@ -30,6 +31,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__(*parent, **flags)
         self.setupUi(self)
 
+        # *Seccion de botones
         self.Rojobtn.clicked.connect(self.rojo)
         self.Amarillobtn.clicked.connect(self.amarillo)
         self.Azulbtn.clicked.connect(self.azul)
