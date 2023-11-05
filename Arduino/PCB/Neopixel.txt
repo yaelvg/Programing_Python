@@ -1,0 +1,52 @@
+#include <Adafruit_NeoPixel.h>
+#define xPin A0
+#define yPin A1
+#define PIXEL_PIN 6    // Pin digital conectado a los NeoPixels.
+#define PIXEL_COUNT 16 // Número de NeoPixels
+#define BUTTON_PIN 3
+Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
+boolean oldState = HIGH;
+int contador = 0;
+int ledPosition = 0;
+int colors[5][3]={{ 255, 0, 0}, {255, 255, 0}, {0, 255, 255},{0, 255, 0} , {0, 0, 255}};
+int r=colors[0][0];
+int g=colors[0][1];
+int b=colors[0][2];
+int count=1;
+void setup() {
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  strip.begin();
+  strip.show();
+}
+void loop() {
+  boolean newState = digitalRead(BUTTON_PIN);
+  int xVal = analogRead(xPin); // Lectura del eje X del joystick
+  int yVal = analogRead(yPin); // Lectura del eje Y del joystick
+  int mappedX = map(xVal, 0, 1023, 0, 16); // Mapea los valores de 0-1023 a 0-15
+  int mappedY = map(yVal, 0, 1023, 0, 16); // Mapea los valores de 0-1023 a 0-15
+  if ((newState == LOW) && (oldState == HIGH)) {
+    delay(20);
+    newState = digitalRead(BUTTON_PIN);
+    contador++;
+  }
+  if (contador > PIXEL_COUNT) {
+    contador = 1; // Asegura que el contador no exceda el número máximo de LEDs
+    count++;
+    if (count > 4){
+      count = 0;
+    }
+     r=colors[count][0];
+     g=colors[count][1];
+     b=colors[count][2];
+  }
+  for (int i = 0; i < contador; i++) {
+    ledPosition = (mappedX + ((15 - mappedY) * 4) + i ) % PIXEL_COUNT;
+    strip.setPixelColor(ledPosition, strip.Color(r, g, b)); // Enciende el LED en la posición determinada por el joystick
+  }
+  strip.show();
+  oldState = newState;
+  for (int i = 0; i < PIXEL_COUNT; i++) {
+    strip.setPixelColor(i, strip.Color(0, 0, 0)); // Apaga todos los LEDs
+  }
+  strip.show();
+}
