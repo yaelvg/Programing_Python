@@ -8,6 +8,7 @@ Anlaogia
 tpc se encarga de llevar la informacion a la cierta direccion que es la ip
 la ip se represntan en octetos que vas de 0 a 255
 255,255,255,255 
+
 Fases
 Sincronizacion para la transmicion d e datos, se realiza una prueba que la tcp va ir routeando para llegar al destino,
 passando por cada rooter asignandole una etiqueta, cuadno hay una confirmacion de recepcion empieza la transmicion de datos
