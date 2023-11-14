@@ -5,7 +5,7 @@ import threading
 
 
 username = input('Introduce un nombre de usuario: ')
-host = '192.168.0.3'  # !localhost- Donde se ecuntra el loopback
+host = '192.168.0.10'  # !localhost- Donde se ecuntra el loopback
 port = 6667 # ! Puerto el cual se establecera la comunicacion
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

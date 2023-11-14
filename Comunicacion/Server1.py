@@ -3,7 +3,7 @@ import socket
 # * El uso de la libreria (threading) permite el uso de hilos que se ejecutan en paralelo
 import threading
 
-host = '192.168.0.3' # !localhost- Donde se ecuntra el loopback
+host = '192.168.0.10' # !localhost- Donde se ecuntra el loopback
 port = 6667# ! Puerto el cual se establecera la comunicacion
 
 # ? Creacion del socket que se encargara de establecer la comunicacion
