@@ -1,0 +1,6 @@
+Bibloteca de open source
+Toda imagen se maneja por matrices
+1 pixel en rgb ocupa lo de 4 bytes en memoria
+PARA HACER LA CONVERSION REALIZA UN PROMEDIO
+R + G + B /3
+UINT -> entero sin signo
