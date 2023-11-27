@@ -10,30 +10,35 @@ cliente = MongoClient(mongo_uri)
 
 db = cliente['Usuarios']
 colecciones = db['Datos']
-'''Si deseamos guardar datos lo hacemos en formato JSON en python es en forma de objeto'''
 
+img1 = cv2.imread("IPN.png")
+img2 = cv2.imread("lenna.ppm")
 
-# * INSERTA DATOS A LA BASE DE DATOS UNO A UNO
-#colecciones.insert_one({'_id': 2,'Correo': x})
+#Codificación de la imagen a base64
+_, buffer1 = cv2.imencode('.png', img1)
+_, buffer2 = cv2.imencode('.ppm', img2)
 
-img = cv2.imread("IPN.png")
-
- #Codificación de la imagen a base64
-_, buffer = cv2.imencode('.png', img)
-codificado = base64.b64encode(buffer)
+codificado1 = base64.b64encode(buffer1)
+codificado2 = base64.b64encode(buffer2)
 
 # Almacenamiento en MongoDB usando GridFS
-filename = 'img_user'
+filename1 = 'img_user1'
+filename2 = 'img_user2'
+
 fs = gridfs.GridFS(db)
-file_id = fs.put(codificado, filename=filename)
-user_1={'username': 'Aleee', 'Correo': 'av@gmail.com','filename': filename, 'file_id': file_id}
-user_2={'username': 'azulita', 'Correo': 'azul@gmail.com','filename': filename, 'file_id': file_id}
+
+file_id1 = fs.put(codificado1, filename=filename1)
+file_id2 = fs.put(codificado2, filename=filename2)
+
+user_1={'username': 'Aleee', 'Correo': 'av@gmail.com','filename': filename1, 'file_id': file_id1}
+user_2={'username': 'azulita', 'Correo': 'azul@gmail.com','filename': filename2, 'file_id': file_id2}
 
 # Inserción de metadatos en la colección image
 
  # * INSERTA DATOS A LA BASE DE DATOS EN CONJUNTO
 colecciones.insert_many([user_1, user_2])
-db.image.insert_one({'filename': filename, 'file_id': file_id})
+db.Datos.insert_one({'filename': filename1, 'file_id': file_id1})
+db.Datos.insert_one({'filename': filename2, 'file_id': file_id2})
 
 
 # * Busqueda de datos
@@ -49,22 +54,28 @@ print('\n\n')
 fs = gridfs.GridFS(db)
 
 # Obtener el objeto GridOut correspondiente al archivo
-file_obj = fs.find_one({'filename': filename})
+file_obj1 = fs.find_one({'filename': filename1})
+file_obj2 = fs.find_one({'filename': filename2})
 
 # Obtener el contenido codificado en base64
-codificado = file_obj.read()
+codificado1 = file_obj1.read()
+codificado2 = file_obj2.read()
 
 # Decodificar el contenido base64
-decoded = base64.b64decode(codificado)
+decoded1 = base64.b64decode(codificado1)
+decoded2 = base64.b64decode(codificado2)
 
 # Convertir los datos decodificados a un array NumPy
-buffer = np.frombuffer(decoded, dtype=np.uint8)
+buffer1 = np.frombuffer(decoded1, dtype=np.uint8)
+buffer2 = np.frombuffer(decoded2, dtype=np.uint8)
 
 # Decodificar el array NumPy con OpenCV
-imagen = cv2.imdecode(buffer, flags=cv2.IMREAD_UNCHANGED)
+imagen1= cv2.imdecode(buffer1, flags=cv2.IMREAD_UNCHANGED)
+imagen2 = cv2.imdecode(buffer2, flags=cv2.IMREAD_UNCHANGED)
 
 # Mostrar la imagen con OpenCV o con otras bibliotecas según sea necesario
-cv2.imshow('Imagen Recuperada', imagen)
+cv2.imshow('Imagen Recuperada', imagen1)
+#cv2.imshow('Imagen Recuperada', imagen2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
