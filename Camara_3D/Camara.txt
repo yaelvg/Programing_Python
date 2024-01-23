@@ -1,0 +1,4 @@
+Visión estereoscopica
+-Kinect - xbox360
+-Adaptador
+-Software Driver 1.8, Pykinect, deshabili la integridad de memoria
