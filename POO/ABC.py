@@ -8,7 +8,9 @@ class Figura(metaclass=ABCMeta):
     @abstractmethod
     def __str__ (self) -> None:
         pass
+    
 class Cuadrado(Figura):
+    
     def __init__(self,base : int, alturea: int):
         super().__init__()
         self.__base=base
